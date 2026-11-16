@@ -1,0 +1,35 @@
+# --- Secrets: never commit these -------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Private data: complaints, evidence, databases, backups ----------------
+backend/data/
+backend/storage/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite3
+backups/
+*.dump
+
+# --- Python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Node / frontend ----------------------------------------------------------
+node_modules/
+frontend/dist/
+
+# --- Editors / OS -------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

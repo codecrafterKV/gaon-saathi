@@ -1,0 +1,9 @@
+[Unit]
+Description=Gaon Saathi retention purge (deletes finished complaints past the retention period)
+
+[Service]
+Type=oneshot
+User=gaonsaathi
+WorkingDirectory=/opt/gaon-saathi/backend
+EnvironmentFile=/opt/gaon-saathi/backend/.env
+ExecStart=/opt/gaon-saathi/backend/.venv/bin/python -m app.cli purge-expired

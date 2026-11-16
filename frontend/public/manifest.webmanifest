@@ -1,0 +1,10 @@
+{
+  "name": "Gaon Saathi",
+  "short_name": "Gaon Saathi",
+  "description": "Report village problems safely and anonymously.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1f3a",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

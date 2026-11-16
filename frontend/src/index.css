@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-white font-sans text-slate-700; }
+  h1, h2, h3, h4 { @apply font-display text-navy-900; }
+  :focus-visible { @apply outline-none ring-2 ring-brand-500 ring-offset-2; }
+  ::selection { @apply bg-brand-200 text-navy-900; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700 active:bg-brand-800; }
+  .btn-navy { @apply btn bg-navy-900 text-white shadow-sm hover:bg-navy-800; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-navy-900 hover:border-navy-300 hover:bg-navy-50; }
+  .btn-ghost { @apply btn text-navy-700 hover:bg-navy-50; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-light { @apply btn bg-white text-navy-900 shadow-sm hover:bg-brand-50; }
+  .btn-outline-light { @apply btn border border-white/30 text-white hover:bg-white/10; }
+  .btn-sm { @apply min-h-[36px] rounded-lg px-3 py-1.5 text-xs; }
+
+  .label { @apply mb-1.5 block text-sm font-semibold text-navy-900; }
+  .hint { @apply mt-1.5 text-xs text-slate-500; }
+  .input { @apply block w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-[15px] text-navy-900 shadow-sm placeholder:text-slate-400 transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/15 disabled:bg-slate-50; }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-500/15; }
+  .field-error { @apply mt-1.5 flex items-center gap-1 text-xs font-medium text-red-600; }
+
+  .card { @apply rounded-2xl border border-slate-200/80 bg-white shadow-card; }
+  .card-pad { @apply p-5 sm:p-6; }
+  .eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200; }
+  .section { @apply py-16 sm:py-24; }
+  .section-title { @apply text-3xl font-extrabold tracking-tight text-navy-900 sm:text-4xl; }
+  .section-lead { @apply mt-4 text-base leading-relaxed text-slate-600 sm:text-lg; }
+  .prose-page h2 { @apply mt-10 text-xl font-bold text-navy-900 sm:text-2xl; }
+  .prose-page h3 { @apply mt-6 text-lg font-bold text-navy-900; }
+  .prose-page p { @apply mt-3 leading-relaxed text-slate-600; }
+  .prose-page ul { @apply mt-3 list-disc space-y-2 pl-6 text-slate-600; }
+  .prose-page ol { @apply mt-3 list-decimal space-y-2 pl-6 text-slate-600; }
+  .prose-page strong { @apply font-semibold text-navy-900; }
+  .prose-page a { @apply font-medium text-brand-700 underline underline-offset-2 hover:text-brand-800; }
+
+  .table-base { @apply min-w-full divide-y divide-slate-200 text-sm; }
+  .table-base th { @apply whitespace-nowrap bg-slate-50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .table-base td { @apply whitespace-nowrap px-4 py-3 text-slate-700; }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-dots { background-image: radial-gradient(rgba(11,31,58,0.08) 1px, transparent 1px); background-size: 22px 22px; }
+  .text-balance { text-wrap: balance; }
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  header, footer, .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }

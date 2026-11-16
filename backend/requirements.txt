@@ -1,0 +1,15 @@
+# Gaon Saathi backend - runtime dependencies (tested versions)
+fastapi==0.162.4
+uvicorn[standard]==0.54.0
+SQLAlchemy==2.1.8
+alembic==1.20.1
+psycopg[binary]==3.3.8
+pydantic==2.14.3
+pydantic-settings==2.16.2
+python-multipart==0.0.33
+argon2-cffi==25.1.0
+cryptography==50.0.2
+pillow==13.0.0
+pypdf==7.0.1
+# Bundles an ffmpeg binary used to strip hidden metadata (GPS etc.) from videos.
+imageio-ffmpeg==0.8.1

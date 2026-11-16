@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest==9.2.0
+httpx==0.28.1
+# End-to-end browser test (e2e/run_e2e.py). Uses your installed Edge/Chrome.
+playwright==1.65.0

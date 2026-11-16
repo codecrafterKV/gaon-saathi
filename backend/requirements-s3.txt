@@ -1,0 +1,3 @@
+# Optional: private S3-compatible object storage for evidence (STORAGE_BACKEND=s3)
+-r requirements.txt
+boto3>=1.35

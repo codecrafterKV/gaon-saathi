@@ -1,0 +1,10 @@
+# Daily data-retention purge. Pair with gaon-saathi-purge.service.
+[Unit]
+Description=Daily Gaon Saathi retention purge
+
+[Timer]
+OnCalendar=*-*-* 03:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

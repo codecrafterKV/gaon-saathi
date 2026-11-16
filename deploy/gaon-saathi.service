@@ -1,0 +1,27 @@
+# systemd unit for the Gaon Saathi backend (Linux).
+# Install: sudo cp deploy/gaon-saathi.service /etc/systemd/system/ && sudo systemctl enable --now gaon-saathi
+[Unit]
+Description=Gaon Saathi API and web app
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=gaonsaathi
+Group=gaonsaathi
+WorkingDirectory=/opt/gaon-saathi/backend
+EnvironmentFile=/opt/gaon-saathi/backend/.env
+# Single worker: anti-spam rate limits are kept in memory per process.
+ExecStart=/opt/gaon-saathi/backend/.venv/bin/python -m app.cli serve --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/gaon-saathi/backend/storage /opt/gaon-saathi/backend/data
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

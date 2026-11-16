@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gaon Saathi">
+  <defs>
+    <clipPath id="gs-shield"><path d="M32 3.5 54.5 11.5V29c0 14.8-9.5 25.8-22.5 31.5C19 54.8 9.5 43.8 9.5 29V11.5Z"/></clipPath>
+    <linearGradient id="gs-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f3d64"/>
+      <stop offset="1" stop-color="#0b1f3a"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3.5 54.5 11.5V29c0 14.8-9.5 25.8-22.5 31.5C19 54.8 9.5 43.8 9.5 29V11.5Z" fill="url(#gs-bg)"/>
+  <g clip-path="url(#gs-shield)">
+    <path d="M4 42.5c13-6 43-6 56 0V64H4Z" fill="#0b8f4a"/>
+    <path d="M4 47.5c16-5 40 2.5 56-1.5V64H4Z" fill="#14ae5c"/>
+  </g>
+  <path d="M27.76 18.26a6 6 0 0 1 8.48 0M24.22 14.72a11 11 0 0 1 15.56 0" fill="none" stroke="#34cb7b" stroke-width="2.6" stroke-linecap="round"/>
+  <rect x="24.5" y="30" width="15" height="13" rx="1.2" fill="#fff"/>
+  <path d="M20.5 32 32 22.5 43.5 32" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="29.6" y="35" width="4.8" height="8" rx="2.4" fill="#0b1f3a"/>
+</svg>
